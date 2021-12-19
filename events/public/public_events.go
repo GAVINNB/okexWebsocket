@@ -48,7 +48,7 @@ type (
 		Books []*market.OrderBookWs `json:"data"`
 	}
 	OrderBooks struct {
-		InstId interface{} 				`json:"inst_id"`
+		InstId string 				`json:"inst_id"`
 		Books []*market.OrderBookWs `json:"data"`
 	}
 	OPTIONSummary struct {

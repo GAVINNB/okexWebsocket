@@ -559,9 +559,10 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 
 				f := public.OrderBooks{}
 				f.Books = e.Books
-				f.InstId,_ = e.Arg.Get("instId")
+				instId,_ := e.Arg.Get("instId")
 
-				fmt.Println(f.InstId)
+				f.InstId = instId.(string)
+
 
 				if err != nil {
 					return false
@@ -570,7 +571,7 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 					if c.obCh != nil {
 						c.obCh <- &e
 					}
-					c.StructuredEventChan <- e
+					c.StructuredEventChan <- f
 				}()
 				return true
 			}
