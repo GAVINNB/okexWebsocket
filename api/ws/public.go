@@ -564,7 +564,7 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 				instId,_ := e.Arg.Get("instId")
 
 				f.InstId = instId.(string)
-
+				c.StructuredEventChan <- f
 
 				if err != nil {
 					return false
