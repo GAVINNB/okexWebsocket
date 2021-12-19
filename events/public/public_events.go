@@ -47,6 +47,10 @@ type (
 		Arg   *events.Argument      `json:"arg"`
 		Books []*market.OrderBookWs `json:"data"`
 	}
+	OrderBooks struct {
+		InstId interface{} 				`json:"inst_id"`
+		Books []*market.OrderBookWs `json:"data"`
+	}
 	OPTIONSummary struct {
 		Arg     *events.Argument               `json:"arg"`
 		Options []*publicdata.OptionMarketData `json:"data"`

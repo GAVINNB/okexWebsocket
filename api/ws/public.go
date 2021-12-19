@@ -556,6 +556,13 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 			if strings.Contains(chName, "books") {
 				e := public.OrderBook{}
 				err := json.Unmarshal(data, &e)
+
+				f := public.OrderBooks{}
+				f.Books = e.Books
+				f.InstId,_ = e.Arg.Get("instId")
+
+				fmt.Println(f.InstId)
+
 				if err != nil {
 					return false
 				}
