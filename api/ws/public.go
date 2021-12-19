@@ -25,6 +25,7 @@ type Public struct {
 	mpcCh  chan *public.MarkPriceCandlesticks
 	plCh   chan *public.PriceLimit
 	obCh   chan *public.OrderBook
+	obsCh  chan *public.OrderBooks
 	osCh   chan *public.OPTIONSummary
 	frCh   chan *public.FundingRate
 	icCh   chan *public.IndexCandlesticks
