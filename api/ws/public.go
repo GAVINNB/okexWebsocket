@@ -559,6 +559,7 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 
 				f := public.OrderBooks{}
 				f.Books = e.Books
+				f.Arg = e.Arg
 				instId,_ := e.Arg.Get("instId")
 
 				f.InstId = instId.(string)

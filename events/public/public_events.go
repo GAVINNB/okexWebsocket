@@ -48,6 +48,7 @@ type (
 		Books []*market.OrderBookWs `json:"data"`
 	}
 	OrderBooks struct {
+		Arg   *events.Argument      `json:"arg"`
 		InstId string 				`json:"inst_id"`
 		Books []*market.OrderBookWs `json:"data"`
 	}
